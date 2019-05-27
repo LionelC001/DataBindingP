@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <!--  <variable
+              name="food"
+              type="com.lionel.databindingpractice.Food" />
+  -->
+        <variable
+            name="foodItemViewModel"
+            type="com.lionel.databindingpractice.FoodItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/layout_recycler_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/x8dp"
+        android:onClick="@{foodItemViewModel::onFoodItemClick}"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{foodItemViewModel.food.brand}" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{foodItemViewModel.food.name}" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{Float.toString(foodItemViewModel.food.calorie)}" />
+    </LinearLayout>
+
+</layout>
